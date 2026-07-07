@@ -10,18 +10,16 @@ const contactRoutes = require("./routes/contactRoutes");
 const app = express();
 
 connectDB();
-app.get("/", (req, res) => {
-    res.send("LensCraft Studio Backend is Running 🚀");
-});
+
 app.use(cors());
 app.use(express.json());
 
+app.get("/", (req, res) => {
+    res.send("LensCraft Studio Backend is Running 🚀");
+});
+
 app.use("/api/bookings", bookingRoutes);
 app.use("/api/contact", contactRoutes);
-
-app.get("/", (req, res) => {
-    res.send("LensCraft Studio Backend Running");
-});
 
 const PORT = process.env.PORT || 5000;
 
