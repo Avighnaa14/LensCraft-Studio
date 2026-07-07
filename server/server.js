@@ -10,7 +10,9 @@ const contactRoutes = require("./routes/contactRoutes");
 const app = express();
 
 connectDB();
-
+app.get("/", (req, res) => {
+    res.send("LensCraft Studio Backend is Running 🚀");
+});
 app.use(cors());
 app.use(express.json());
 
